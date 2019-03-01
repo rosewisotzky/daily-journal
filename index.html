@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/styles/journal.css">
+</head>
+
+<body>
+    <h1>Daily Journal</h1>
+    <div class="container">
+        <form action "">
+            <fieldset>
+                <label for="journalDate">Date of Entry: </label>
+                <input type="date" name="journalDate" id="journalDate">
+            </fieldset>
+        </form>
+        <form action="">
+            <fieldset>
+                <label for="conceptsCovered">Concepts Covered: </label>
+                <input type="text" name="conceptsCovered" id="conceptsCovered">
+            </fieldset>
+        </form>
+        <form action="">
+            <fieldset>
+                <label for="journalEntry">Journal Entry: </label>
+                <textarea name="journalEntry" id="journalEntry" cols="30" rows="10"></textarea>
+            </fieldset>
+        </form>
+        <form action="">
+            <fieldset>
+                <label for="currentMood">Current Mood: </label>
+                <select name="currentMood" id="currentMood">
+                    <option value="yikes">Yikes!</option>
+                    <option value="maybe">I think I understand this...kind of!</option>
+                    <option value="heckYeah">Heck yeah.</option>
+                    <option value="wickedSmart">I feel wicked smart!</option>
+                </select>
+            </fieldset>
+            <button>Record Journal Entry</button>
+        </form>
+    </div>
+    <script src="src/scripts/journal.js "></script>
+</body>
+
+</html>
