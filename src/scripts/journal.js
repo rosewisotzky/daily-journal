@@ -1,4 +1,15 @@
 console.log("gOOD JOb FrieNDo LoVe YoU bUdDy")
+
+/*
+    Main application logic that uses the functions and objects
+    defined in the other JavaScript files.
+
+    Change the fake variable names below to what they should be
+    to get the data and display it.
+*/
+API.getJournalEntries().then(renderJournalEntries)
+
+
 /*
     Define the keys and value for a JavaScript object that
     represents a journal entry about what you learned today
@@ -36,15 +47,6 @@ console.log("gOOD JOb FrieNDo LoVe YoU bUdDy")
 
     Arguments: journalEntry (object)
 */
-const makeJournalEntryComponent = (date, concept, entry, mood) => {
-    // Create your own HTML structure for a journal entry
-    return `<h1>${date}</h1>
-            <section>${concept}</section>
-            <p>${entry}</p>
-            <aside>${mood}</aside>
-
-    `
-}
 
 
 // myJournalEntries.push(entryOne, entryTwo);
@@ -55,26 +57,10 @@ const makeJournalEntryComponent = (date, concept, entry, mood) => {
 
     Arguments: entries (array of objects)
 */
-const entryLog = document.querySelector(".entryLog");
 
-const renderJournalEntries = (entries) => {
-    for (let i = 0; i < entries.length; i++) {
-        entryLog.innerHTML += makeJournalEntryComponent(
-            entries[i].date,
-            entries[i].conceptsCovered,
-            entries[i].journalEntry,
-            entries[i].mood
-        )
-    }
-}
 
-fetch("http://localhost:3000/entries")
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(parsedResponse) {
-    return renderJournalEntries(parsedResponse);
-  });
+
+
 
   
 // const getEntries = () => {
@@ -95,3 +81,4 @@ fetch("http://localhost:3000/entries")
 // postEntries(getEntries)
 // Invoke the render function
 // renderJournalEntries(myJournalEntries)
+
