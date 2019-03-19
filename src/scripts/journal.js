@@ -16,20 +16,20 @@ console.log("gOOD JOb FrieNDo LoVe YoU bUdDy")
 //     mood: "Delighted"
 // }
 
-const myJournalEntries = [
-    {
-        date: "March 1, 2019",
-        conceptsCovered: "JavaScript Objects",
-        journalEntry: "We have been learning about JavaScript Objects and data structures. We've learned how to select values",
-        mood: "Tired from learning lots of things but good."
-    },
-    {
-        date: "March 1, 2019",
-        conceptsCovered: "Learning Styles",
-        journalEntry: "There are many different styles of learning. No style of learning is better than another!",
-        mood: "Delighted"
-    }
-];
+// const myJournalEntries = [
+//     {
+//         date: "March 1, 2019",
+//         conceptsCovered: "JavaScript Objects",
+//         journalEntry: "We have been learning about JavaScript Objects and data structures. We've learned how to select values",
+//         mood: "Tired from learning lots of things but good."
+//     },
+//     {
+//         date: "March 1, 2019",
+//         conceptsCovered: "Learning Styles",
+//         journalEntry: "There are many different styles of learning. No style of learning is better than another!",
+//         mood: "Delighted"
+//     }
+// ];
 /*
     Purpose: To create, and return, a string template that
     represents a single journal entry object as HTML
@@ -58,7 +58,7 @@ const makeJournalEntryComponent = (date, concept, entry, mood) => {
 const entryLog = document.querySelector(".entryLog");
 
 const renderJournalEntries = (entries) => {
-    for (let i = 0; i < myJournalEntries.length; i++) {
+    for (let i = 0; i < entries.length; i++) {
         entryLog.innerHTML += makeJournalEntryComponent(
             entries[i].date,
             entries[i].conceptsCovered,
@@ -68,5 +68,30 @@ const renderJournalEntries = (entries) => {
     }
 }
 
+fetch("http://localhost:3000/entries")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(parsedResponse) {
+    return renderJournalEntries(parsedResponse);
+  });
+
+  
+// const getEntries = () => {
+//     return fetch("http://localhost:3000/") // Fetch from the API
+//         .then(response => response.json())
+// }
+
+// const postEntries = (newEntry) => {
+//     return fetch("http://localhost:3000/entries", {
+//             method: "POST",
+//             body: JSON.stringify(newEntry),
+//             headers: {
+//                 "Content-Type": "application/json"
+//             }
+//         })
+//         .then(response => response.json())
+// } // What should happen when we finally have the array?
+// postEntries(getEntries)
 // Invoke the render function
-renderJournalEntries(myJournalEntries)
+// renderJournalEntries(myJournalEntries)

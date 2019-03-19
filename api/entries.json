@@ -1,0 +1,15 @@
+{
+    "entries": [{
+            "date": "March 1, 2019",
+            "conceptsCovered": "JavaScript Objects",
+            "journalEntry": "We have been learning about JavaScript Objects and data structures. We've learned how to select values",
+            "mood": "Tired from learning lots of things but good."
+        },
+        {
+            "date": "March 1, 2019",
+            "conceptsCovered": "Learning Styles",
+            "journalEntry": "There are many different styles of learning. No style of learning is better than another!",
+            "mood": "Delighted"
+        }
+    ]
+}
